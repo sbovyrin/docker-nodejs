@@ -30,4 +30,4 @@ USER $USER
 
 WORKDIR /home/$USER/app
 
-CMD ["node"]
+CMD tail -f /dev/null
