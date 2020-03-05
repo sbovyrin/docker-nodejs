@@ -13,10 +13,10 @@ v3.11 | v13.8
 Create "Hello world example" using ExpressJS.
 
 ```sh
-# go to temp directory
-cd /tmp
 # create example directory
 mkdir hello_world_project
+# go to created directory
+cd hello_world_project
 # create file contains a javascript code
 touch index.js
 ```
@@ -48,8 +48,9 @@ docker exec -it nodejs npm install express --save
 docker exec -it nodejs node index.js
 ```
 
-Now, you will see **Example app listening on port 3000!**.
-Open your browser and go to **localhost**. You should see `Hello World!`.
+Now, you will see **Example app listening on port 3000!** in your console.
+
+Open your browser and go to **localhost:3000**. You should see `Hello World!`.
 
 ## Usage
 
