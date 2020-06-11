@@ -13,7 +13,7 @@ ENV GID=1000
 ENV NODEJS_VERSION=14.4.0
 
 RUN apk --no-cache add curl libstdc++ \
-    && curl -fsSLO --compressed https://unofficial-builds.nodejs.org/download/release/v$NODEJS_VERSION/node-v$NODEJS_VERSION-linux-x64-musl.tar.xz \
+    && curl -#fSLO --compressed https://unofficial-builds.nodejs.org/download/release/v$NODEJS_VERSION/node-v$NODEJS_VERSION-linux-x64-musl.tar.xz \
     && tar -xJf node-v$NODEJS_VERSION-linux-x64-musl.tar.xz \
     && mkdir /usr/local/lib/nodejs \
     && mv node-v$NODEJS_VERSION-linux-x64-musl/* /usr/local/lib/nodejs \
@@ -21,7 +21,8 @@ RUN apk --no-cache add curl libstdc++ \
     && ln -s /usr/local/lib/nodejs/bin/node /usr/local/bin/node \
     && ln -s /usr/local/lib/nodejs/bin/npm /usr/local/bin/npm \
     && ln -s /usr/local/lib/nodejs/bin/npx /usr/local/bin/npx \
-    && npm i -g yarn \
+    && ln -s /usr/local/lib/nodejs/bin/eslint /usr/local/bin/eslint \
+    && npm i -g yarn eslint \
     && ln -s /usr/local/lib/nodejs/lib/node_modules/yarn/bin/yarn /usr/local/bin/yarn \
     && apk del curl \
     && addgroup -g $GID -S $USER \
