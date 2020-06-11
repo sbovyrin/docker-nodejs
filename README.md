@@ -4,7 +4,7 @@ Lightweight docker image based on Alpine with nodejs environment inside.
 
 Alpine | NodeJS
 ---|---
-v3.11 | v13.8
+v3.11 | v14.4
 
 > Also, the image contains npm, npx and yarn.
 
